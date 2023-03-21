@@ -6,3 +6,5 @@
 3. Open that Fodler in VS code
 
 4. Open VS code Terminal and type npm update
+
+5. to run the code type npm run Sanity in VS code terminal
