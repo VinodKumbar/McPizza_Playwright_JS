@@ -2,10 +2,6 @@ import { test, expect } from '@playwright/test';
 const {chatBot} = require('../pageObjects/chatBot');
 
 
-
-
-
-
 test('@Sanity Validate the Pizza Order Booking from McPizza ChatBot', async ({ page }) => {
  
  const fName = "Vinod";
@@ -16,14 +12,14 @@ test('@Sanity Validate the Pizza Order Booking from McPizza ChatBot', async ({ p
   await bot.orderJourney(fName, lName, eMail); 
 
 
-  // await page.frameLocator('iframe[name="avaamoIframe"]').getByPlaceholder('Type a message...').fill('How are you ?');
-  // await page.frameLocator('iframe[name="avaamoIframe"]').getByRole('button', { name: 'Send' }).click();
+  await page.frameLocator('iframe[name="avaamoIframe"]').getByPlaceholder('Type a message...').fill('How are you ?');
+  await page.frameLocator('iframe[name="avaamoIframe"]').getByRole('button', { name: 'Send' }).click();
 
-  // await page.frameLocator('iframe[name="avaamoIframe"]').getByPlaceholder('Type a message...').fill('How old are you ?');
-  // await page.frameLocator('iframe[name="avaamoIframe"]').getByRole('button', { name: 'Send' }).click();
+  await page.frameLocator('iframe[name="avaamoIframe"]').getByPlaceholder('Type a message...').fill('I want to order pizza');
+  await page.frameLocator('iframe[name="avaamoIframe"]').getByRole('button', { name: 'Send' }).click();
 
-  await page.frameLocator('iframe[name="avaamoIframe"]').getByPlaceholder('Type a message...').fill('Order');
-  await page.frameLocator('iframe[name="avaamoIframe"]').getByRole('option', { name: 'I want to order pizza' }).getByText('order').click();
+  // await page.frameLocator('iframe[name="avaamoIframe"]').getByPlaceholder('Type a message...').fill('Order');
+  // await page.frameLocator('iframe[name="avaamoIframe"]').getByRole('option', { name: 'I want to order pizza' }).getByText('order').click();
 
   
   await page.frameLocator('iframe[name="avaamoIframe"]').getByRole('link', { name: 'veg', exact: true }).click();
